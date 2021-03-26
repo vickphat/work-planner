@@ -1,5 +1,9 @@
-// handle displaying the time
+var currentDay = document.querySelector("#currentDay")
+
+// Displays current date
 function displayTime() {
-    var rightNow = moment().format('MMM DD, YYYY [at] hh:mm:ss a');
-    timeDisplayEl.text(rightNow);
+    var time = moment().format("dddd MMMM Do YYYY");    
+    currentDay.append(time);
   }
+
+  displayTime();
