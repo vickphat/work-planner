@@ -15,7 +15,7 @@
     localStorage.setItem(timeBlock, text);
 })
 
- // On page refresh, saved event persist 
+ // On page refresh, text input stored in local storage will persist 
  $("#block1 .description").val(localStorage.getItem("block1"));
  $("#block2 .description").val(localStorage.getItem("block2"));
  $("#block3 .description").val(localStorage.getItem("block3"));
@@ -26,3 +26,27 @@
  $("#block8 .description").val(localStorage.getItem("block8"));
  $("#block9 .description").val(localStorage.getItem("block9"));
  $("#block10 .description").val(localStorage.getItem("block10"));
+
+ 
+ function colorCode() {
+  //  gets the current time
+  var currentTime = moment().hours();
+  
+  // function to loop though time blocks
+  $(".time-block").each(function () {
+      var blockTime = parseInt($(this).attr("id").split("block")[1]);
+
+      // adds appropiate class depending on the time
+      if (blockTime < currentTime) {
+          $(this).addClass("past");
+      }
+      else if (blockTime === currentTime) {
+          $(this).addClass("present");
+      }
+      else {
+          $(this).addClass("future");
+        
+      }
+  })
+}
+colorCode();
