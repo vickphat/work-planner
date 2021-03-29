@@ -1,19 +1,28 @@
 // Displays current date
-var time = moment().format("dddd MMMM Do YYYY");
-$("#currentDay").append(time);
-console.log(time)
+    var currentDate = moment().format("dddd MMMM Do YYYY");
+    $("#currentDay").append(currentDate);
+    console.log(currentDate)
 
-// saveBtn click listener 
-$(".saveBtn").click(function () {
+// Click event for save button
+    $(".saveBtn").click(function () {
 
-// Get nearby values of the description in JQuery
-var text = $(this).siblings(".description").val();
-var timeBlock = $(this).parent().attr("id");
-console.log(this, text, timeBlock)
+    var text = $(this).siblings(".description").val();
+    var timeBlock = $(this).parent().attr("id");
+    // console logs inputted text and timeblock
+    console.log(this, text, timeBlock)
 
 // Saves text input and time block into local storage
-localStorage.setItem(timeBlock, text);
-
+    localStorage.setItem(timeBlock, text);
 })
 
-
+ // On page refresh, saved event persist 
+ $("#block1 .description").val(localStorage.getItem("block1"));
+ $("#block2 .description").val(localStorage.getItem("block2"));
+ $("#block3 .description").val(localStorage.getItem("block3"));
+ $("#block4 .description").val(localStorage.getItem("block4"));
+ $("#block5 .description").val(localStorage.getItem("block5"));
+ $("#block6 .description").val(localStorage.getItem("block6"));
+ $("#block7 .description").val(localStorage.getItem("block7"));
+ $("#block8 .description").val(localStorage.getItem("block8"));
+ $("#block9 .description").val(localStorage.getItem("block9"));
+ $("#block10 .description").val(localStorage.getItem("block10"));
