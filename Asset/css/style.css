@@ -71,3 +71,19 @@ textarea {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
 }
+
+@media screen and (max-width: 768px) {
+  .row {
+    height: auto;
+    margin: 1rem;
+  }
+
+  .saveBtn {
+    border-radius: 0;
+    height: 2rem;
+  }
+  
+  textarea {
+    height: 5rem;
+  }
+}
