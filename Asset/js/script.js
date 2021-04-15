@@ -43,10 +43,13 @@ function colorCode() {
         }
         //   textarea red
         else if (blockTime === currentTime) {
+            $(this).removeClass("past")
             $(this).addClass("present");
         }
         //   textarea green
         else {
+            $(this).removeClass("past")
+            $(this).removeClass("present");
             $(this).addClass("future");
 
         }
